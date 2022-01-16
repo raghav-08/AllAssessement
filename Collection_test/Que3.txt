@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.*;
+public class Que3
+{
+    public static void main(String args[]) 
+    {
+        ArrayList<String> color = new ArrayList<String>();
+        color.add("Green");
+        color.add("Blue");
+        color.add("Red");
+        color.add("Yellow");
+        color.add("White");
+        System.out.println(color);
+        
+        //update the element
+        color.set(3,"Black");
+        System.out.println(color);
+        
+        //Remove and Sort the Element
+        color.remove(1);
+        Collections.sort(color);
+        System.out.println(color);
+    }
+}
