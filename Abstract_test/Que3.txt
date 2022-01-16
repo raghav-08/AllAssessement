@@ -1,0 +1,31 @@
+abstract class Telephone
+{
+    abstract void with();
+    abstract void lift();
+    abstract void disconnected();
+}
+class Smart_T extends Telephone
+{
+    void with()
+    {
+        System.out.println("The Number you dial is busy with another call");
+    }
+    void lift()
+    {
+        System.out.println("The Number you is busy. Please call again Later");
+    }
+    void disconnected()
+    {
+        System.out.println("Call is dissconnected");
+    }
+}
+public class Que3 extends Smart_T
+{
+    public static void main(String arg[])
+    {
+        Telephone t=new Smart_T();
+        t.with();
+        t.lift();
+        t.disconnected();
+    }
+}

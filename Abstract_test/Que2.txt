@@ -1,0 +1,33 @@
+class Monkey
+{
+    void jump()
+    {
+        System.out.println("Monkey like to jump throgh tree to tree");
+    }
+    void bite()
+    {
+        System.out.println("When Monkey get angry then they can Bite.");
+    }
+}
+class Human extends Monkey
+{
+    void eat()
+    {
+        System.out.println("All creature can eat");
+    }
+    void sleep()
+    {
+        System.out.println("All the living being will sleep");
+    }
+}
+public class Que2 extends Human
+{
+    public static void main(String arg[])
+    {
+        Human h = new Human();
+        h.eat();
+        h.sleep();
+        h.jump();
+        h.bite();
+    }
+}

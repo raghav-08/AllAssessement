@@ -1,0 +1,22 @@
+abstract class Pen
+{
+    abstract void write();
+    abstract void refill();
+}
+public class Que1 extends Pen
+{
+    void write()
+    {
+        System.out.println("Write with the pen");
+    }
+    void refill()
+    {
+        System.out.println("refill the ink in the Pen");
+    }
+    public static void main(String args[]) 
+    {
+        Pen p = new MyClass();
+        p.write();
+        p.refill();
+    }
+}
