@@ -1,0 +1,54 @@
+create database trainer;
+use trainer;
+
+create table trainer_info(Trainer_Id varchar(20) UNIQUE NOT NULL PRIMARY KEY, Salutaion varchar(7), Trainer_Name varchar(30), Trainer_Location varchar(30), Trainer_Track varchar(15), Trainer_Qualification varchar(100), Trainer_experience int(11), Trainer_Email varchar(100), Trainer_Password varchar(20));
+create table Batch_Info(Batch_Id varchar(20) UNIQUE NOT NULL PRIMARY KEY, Batch_Owner varchar(30), Batch_BU_Name varchar(30));
+create table Module_Info(Module_Id varchar(20) UNIQUE NOT NULL PRIMARY KEY, Module_Name varchar(40), Module_Duration int(11));
+create table Associate_Info(Associate_Id varchar(20) UNIQUE NOT NULL PRIMARY KEY, Salutation varchar(7), Associate_Name varchar(30), Associate_Location varchar(30), Associate_Track varchar(15), Associate_Qualification varchar(200), Associate_Email varchar(100), Associate_Password varchar(20));
+create table Questions(Question_Id varchar(20) UNIQUE NOT NULL PRIMARY KEY, Module_Id varchar(20), Questions_Text varchar(900), FOREIGN KEY(Module_Id) REFERENCES Module_Info(Module_Id));
+
+alter table Associate_Status ADD Batch_Id varchar(20);
+alter table Associate_Status ADD Trainer_Id varchar(20);
+alter table Associate_Status ADD FOREIGN KEY(Batch_Id) REFERENCES Batch_Info(Batch_Id);
+alter table Associate_Status ADD FOREIGN KEY(Trainer_Id) REFERENCES trainer_info(Trainer_id);
+
+
+INSERT INTO trainer_info VALUES ('F001','Mr.','PANKAJ GHOSH','Pune','Java','Bachelor of Technology',12,'Pankaj.Ghosh@alliance.com','fac1@123');
+INSERT INTO trainer_info VALUES ('F002','Mr.','SANJAY RADHAKRISHNAN','Bangalore','DotNet','Bachelor of Technology',12,'Sanjay.Radhakrishnan@alliance.com','fac2@123');
+INSERT INTO trainer_info VALUES ('F003','Mr.','VIJAY MATHUR','Chennai','Mainframe','Bachelor of Technology',10,'Vijay.Mathur@alliance.com','fac3@123');
+INSERT INTO trainer_info VALUES ('F004','Mrs.','NANDINI NAIR','Kolkata','Java','Master of Computer Applications',9,'Nandini.Nair@alliance.com','fac4@123');
+
+INSERT INTO Batch_Info VALUES( 'B001', 'MRS.SWATI ROY', 'MSP');
+INSERT INTO Batch_Info VALUES( 'B002', 'MRS.ARURNA K', 'HEALTHCARE');
+INSERT INTO Batch_Info VALUES( 'B003', 'MR.RAJESH KRISHNAN', 'LIFE SCIENCES');
+INSERT INTO Batch_Info VALUES( 'B004', 'MR.SACHIN SHETTY', 'BFS');
+INSERT INTO Batch_Info VALUES( 'B005', 'MR.RAMESH PATEL', 'COMMUNICATIONS');
+INSERT INTO Batch_Info VALUES( 'B006', 'MRS.SUSAN CHERIAN', 'RETAIL & HOSPITALITY');
+
+
+INSERT INTO ASSOCIATE_INFO VALUES('A001', 'Miss.','GAYATHRI NARAYANAN','Gurgaon', 'Java','Bachelor of Technology','Gayathri.Narayanan@hp.com', 'tne1@123');
+INSERT INTO ASSOCIATE_INFO VALUES('A002', 'Mrs.','RADHIKA MOHAN','Kerala', 'Java','Bachelor of Engineering In Information Technology','Radhika.Mohan@cognizant.com', 'tne2@123');
+INSERT INTO ASSOCIATE_INFO VALUES('A003', 'Mr.','KISHORE SRINIVAS','Chennai', 'Java','Bachelor of Engineering In Computers','Kishore.Srinivas@ibm.com', 'tne3@123');
+INSERT INTO ASSOCIATE_INFO VALUES('A004', 'Mr.','ANAND RANGANATHAN','Mumbai', 'DotNet','Master of Computer Applications','Anand.Ranganathan@finolex.com', 'tne4@123');
+
+
+
+
+INSERT INTO module_info VALUES('O10SQL', 'Oracle 10g SQL ',16);
+INSERT INTO module_info VALUES('O10PLSQL', 'Oracle 10g PL/ SQL ',16);
+INSERT INTO module_info VALUES('J2SE', 'Core Java SE 1.6',288);
+INSERT INTO module_info VALUES('J2EE', 'Advanced Java EE 1.6',80);
+INSERT INTO module_info VALUES('JAVAFX', 'JavaFX 2.1',80);
+INSERT INTO module_info VALUES('DOTNT4', '.Net Framework 4.0 ',50);
+INSERT INTO module_info VALUES('SQL2008', 'MS SQl Server 2008',120);
+INSERT INTO module_info VALUES('MSBI08', 'MS BI Studio 2008',158);
+INSERT INTO module_info VALUES('SHRPNT', 'MS Share Point ',80);
+INSERT INTO module_info VALUES('ANDRD4', 'Android 4.0',200);
+
+
+INSERT INTO questions VALUES('Q001', 'EM001','Instructor knowledgeable and able to handle all your queries');
+INSERT INTO questions VALUES('Q002', 'EM001','All the topics in a particular course handled by the trainer without any gaps or slippages');
+INSERT INTO questions VALUES('Q003', 'EM002','The course materials presentation , handson etc. refered during the training are relevant and useful.');
+INSERT INTO questions VALUES('Q004', 'EM002','The Hands on session adequate enough to grasp the understanding of the topic.');
+INSERT INTO questions VALUES('Q005', 'EM002','The reference materials suggested for each module are adequate.');
+INSERT INTO questions VALUES('Q006', 'EM003','Knowledge and skills presented in this training are applicatible at your work');
