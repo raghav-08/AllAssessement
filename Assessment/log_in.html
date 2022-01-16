@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>
+            Genpact 2.0 | LOGIN PAGE
+        </title>
+    </head>
+    <link rel="icon" href="Genpact_icon.png" type="image/x-icon">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        .container_box
+        {
+            background-color: rgb(222, 226, 228);
+            text-align: center;
+            margin-left: 450px;
+            margin-right: 450px;
+            padding-top: 30px;
+            border: 1px solid;
+        }
+        input[type=submit]
+        {
+            background-color: green;
+            margin-bottom: 20px;
+        }
+        input[type=text]
+        {
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+        input[type=submit]
+        {
+            color: white;
+        }
+        .container 
+        {
+            padding: 16px;
+            
+        }
+        input[type=text], input[type=password] 
+        {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button 
+        {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover 
+        {
+            opacity: 0.9;
+        }
+        body
+        {
+            border: gray 0.5px solid;
+            margin: 300px;
+            border-radius: 0.5cm;
+            padding: 50px;
+        }
+        #fpass
+        {
+            text-decoration: none;
+            padding-top: 5px;
+        }
+    </style>
+    <body>
+       <form action="/action_page.php">
+        <h2>Log In</h2>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+            <button type="submit">Login</button>
+            <center><a href="#forgetpage" id="fpass" >Forget password?</a></center>
+          </div>
+       </form>
+    </body>
+</html>
