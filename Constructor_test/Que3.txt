@@ -1,0 +1,30 @@
+public class Que3
+
+{
+    String name;
+    int yoj;
+    double salary;
+    String address;
+    Employee(String n,int r, double s, String a)
+    {
+        name=n;
+        yoj=r;
+        salary=s;
+        address=a;
+    }
+    void display()
+    {
+        System.out.print(name+" "+yoj+" "+salary+" "+address);
+        System.out.println();
+    }
+    
+    public static void main(String args[]) 
+    {
+    Employee emp1= new Employee("Robert", 1994, 3.5, "4C-Wallstreat");
+    Employee emp2= new Employee("sam", 2000, 4.4, "68D-Wallstreat");
+    Employee emp3= new Employee("John", 1999, 8.2, "26B-Wallstreat");
+    emp1.display();
+    emp2.display();
+    emp3.display();
+    }
+}

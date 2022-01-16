@@ -1,0 +1,12 @@
+public class Que1
+
+{
+    public static void main(String args[]) 
+    {
+    int anInt=199;
+    float aFloat=67f;
+    System.out.println(anInt);
+    System.out.println(aFloat);
+    
+    }
+}

@@ -1,0 +1,30 @@
+public class Que2
+{
+    String name;
+    int rollNo;
+    int phoneNo;
+    String address;
+    Student(String n,int r, int p, String a)
+    {
+        name=n;
+        rollNo=r;
+        phoneNo=p;
+        address=a;
+    }
+    void display()
+    {
+        System.out.print("Name :"+name);
+        System.out.print("RollNo :"+rollNo);
+        System.out.print("Phone NO :"+phoneNo);
+        System.out.print("Address :"+address);
+        System.out.println();
+    }
+    
+    public static void main(String args[]) 
+    {
+    Student student1= new Student("Sam", 17, 847392022, "unknown");
+    Student student2= new Student("John", 88, 843423442, "unknown too");
+    student1.display();
+    student2.display();
+    }
+}
